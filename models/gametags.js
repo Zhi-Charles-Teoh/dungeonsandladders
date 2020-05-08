@@ -1,118 +1,118 @@
 var tags = [
 	{
-		"id":0,
+		"id":"00",
 		"name":"Educational",
 	},
 	{
-		"id":1,
+		"id":"01",
 		"name":"Pop culture",
 	},
 	{
-		"id":2,
+		"id":"02",
 		"name":"Mystery",
 	},
 	{
-		"id":3,
+		"id":"03",
 		"name":"Sport",
 	},
 	{
-		"id":4,
+		"id":"04",
 		"name":"Strategy",
 	},
 	{
-		"id":5,
+		"id":"05",
 		"name":"Family-friendly",
 	},
 	{
-		"id":6,
+		"id":"06",
 		"name":"War",
 	},
 	{
-		"id":7,
+		"id":"07",
 		"name":"Nautical/seafaring",
 	},
 	{
-		"id":8,
+		"id":"08",
 		"name":"Party",
 	},
 	{
-		"id":9,
+		"id":"09",
 		"name":"Economic",
 	},
 	{
-		"id":10,
+		"id":"10",
 		"name":"Adult themes",
 	},
 	{
-		"id":11,
+		"id":"11",
 		"name":"Medical",
 	},
 	{
-		"id":12,
+		"id":"12",
 		"name":"Humour",
 	},
 	{
-		"id":13,
+		"id":"13",
 		"name":"Horror",
 	},
 	{
-		"id":14,
+		"id":"14",
 		"name":"Dice involved",
 	},
 	{
-		"id":15,
+		"id":"15",
 		"name":"Memory",
 	},
 	{
-		"id":16,
+		"id":"16",
 		"name":"Competitive play",
 	},
 	{
-		"id":17,
+		"id":"17",
 		"name":"Co-op play",
 	},
 	{
-		"id":18,
+		"id":"18",
 		"name":"Trading",
 	},
 	{
-		"id":19,
+		"id":"19",
 		"name":"Area control",
 	},
 	{
-		"id":20,
+		"id":"20",
 		"name":"Player elimination",
 	},
 	{
-		"id":21,
+		"id":"21",
 		"name":"Card/hand management",
 	},
 	{
-		"id":22,
+		"id":"22",
 		"name":"Timer involved",
 	},
 	{
-		"id":23,
+		"id":"23",
 		"name":"No boards",
 	},
 	{
-		"id":24,
+		"id":"24",
 		"name":"Social manipulation",
 	},
 	{
-		"id":25,
+		"id":"25",
 		"name":"Player counters involved",
 	},
 	{
-		"id":26,
+		"id":"26",
 		"name":"Tokens involved",
 	},
 	{
-		"id":27,
+		"id":"27",
 		"name":"Resource management",
 	},
 	{
-		"id":28,
+		"id":"28",
 		"name":"Luck-based",
 	},
 ];

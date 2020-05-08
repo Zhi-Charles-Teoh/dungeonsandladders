@@ -2,7 +2,7 @@ var tags = require('../models/gametags');
 
 var games_list = [
 	{
-		"id":0,
+		"id":"000",
 		"name":"Risk",
 		"min_playercount":2,
 		"max_playercount":4,
@@ -13,7 +13,7 @@ var games_list = [
 		"dislike_count":0,
 	},
 	{
-		"id":1,
+		"id":"001",
 		"name":"UNO",
 		"min_playercount":2,
 		"max_playercount":null,
@@ -24,7 +24,7 @@ var games_list = [
 		"dislike_count":0,
 	},
 	{
-		"id":2,
+		"id":"002",
 		"name":"Monopoly",
 		"min_playercount":2,
 		"max_playercount":4,
@@ -35,7 +35,7 @@ var games_list = [
 		"dislike_count":0,
 	},
 	{
-		"id":3,
+		"id":"003",
 		"name":"Snakes and Ladders",
 		"min_playercount":2,
 		"max_playercount":null,
@@ -46,7 +46,7 @@ var games_list = [
 		"dislike_count":0,
 	},
 	{
-		"id":4,
+		"id":"004",
 		"name":"Chess",
 		"min_playercount":2,
 		"max_playercount":2,
@@ -57,7 +57,7 @@ var games_list = [
 		"dislike_count":0,
 	},
 	{
-		"id":5,
+		"id":"005",
 		"name":"Checkers",
 		"min_playercount":2,
 		"max_playercount":2,
@@ -68,7 +68,7 @@ var games_list = [
 		"dislike_count":0,
 	},
 	{
-		"id":6,
+		"id":"006",
 		"name":"Chinese chess",
 		"min_playercount":2,
 		"max_playercount":2,
@@ -79,7 +79,7 @@ var games_list = [
 		"dislike_count":0,
 	},
 	{
-		"id":7,
+		"id":"007",
 		"name":"Go",
 		"min_playercount":2,
 		"max_playercount":2,
@@ -90,7 +90,7 @@ var games_list = [
 		"dislike_count":0,
 	},
 	{
-		"id":8,
+		"id":"008",
 		"name":"Settlers of Catan",
 		"min_playercount":2,
 		"max_playercount":4,
@@ -101,7 +101,7 @@ var games_list = [
 		"dislike_count":0,
 	},	
 	{
-		"id":9,
+		"id":"009",
 		"name":"Dungeons and Dragons",
 		"min_playercount":2,
 		"max_playercount":null,
@@ -112,7 +112,7 @@ var games_list = [
 		"dislike_count":0,
 	},
 	{
-		"id":10,
+		"id":"010",
 		"name":"Exploding Kittens",
 		"min_playercount":2,
 		"max_playercount":6,
@@ -123,7 +123,7 @@ var games_list = [
 		"dislike_count":0,
 	},
 	{
-		"id":11,
+		"id":"011",
 		"name":"Cards Against Humanity",
 		"min_playercount":2,
 		"max_playercount":null,
@@ -134,7 +134,7 @@ var games_list = [
 		"dislike_count":0,
 	},
 	{
-		"id":12,
+		"id":"012",
 		"name":"Poker",
 		"min_playercount":2,
 		"max_playercount":null,
@@ -145,7 +145,7 @@ var games_list = [
 		"dislike_count":0,
 	},
 	{
-		"id":13,
+		"id":"013",
 		"name":"Scrabble",
 		"min_playercount":2,
 		"max_playercount":4,
@@ -156,7 +156,7 @@ var games_list = [
 		"dislike_count":0,
 	},
 	{
-		"id":14,
+		"id":"014",
 		"name":"Cluedo",
 		"min_playercount":2,
 		"max_playercount":4,
@@ -167,7 +167,7 @@ var games_list = [
 		"dislike_count":0,
 	},
 	{
-		"id":15,
+		"id":"015",
 		"name":"Battleship",
 		"min_playercount":2,
 		"max_playercount":2,
@@ -178,7 +178,7 @@ var games_list = [
 		"dislike_count":0,
 	},
 	{
-		"id":16,
+		"id":"016",
 		"name":"Connect 4",
 		"min_playercount":2,
 		"max_playercount":4,
