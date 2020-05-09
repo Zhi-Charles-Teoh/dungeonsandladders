@@ -18,6 +18,6 @@ app.get('/', (req, res) => {
 	res.end();
 });
 
-app.listen(3000, () => { 
+app.listen(process.env.PORT || 3000, () => { 
 	console.log('The library app is running!') 
 });

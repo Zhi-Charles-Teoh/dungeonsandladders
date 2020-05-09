@@ -4,7 +4,7 @@
   "description": "Dungeons and Ladders app for the group project of INFO30005",
   "main": "dnlmain.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+	"start": "node dnlmain.js"
   },
   "author": "Zhi Charles Teoh",
   "license": "ISC",
