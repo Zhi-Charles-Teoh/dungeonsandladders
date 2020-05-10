@@ -17,7 +17,7 @@ that link to them. This includes:
 - games.js, a database of all the games that are supposedly available in the app.
 - gametags.js, a database of all game tags to facilitate the searching of games by tags. games.js uses this file
 in the "tags" attribute.
-- users.js, a database of all users
+- users.js, a database of all users, has "games_owned" and "games_wishlist" attributes that use the games.js file.
 
 GIT repository URL: https://github.com/Zhi-Charles-Teoh/dungeonsandladders
 Heroku app URL: https://dungeons-and-ladders.herokuapp.com/
