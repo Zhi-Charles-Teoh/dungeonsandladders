@@ -23,13 +23,10 @@ const addGame = async (req, res) => {
 };
 
 const getGameByID = async (req, res) => {
-	try {
-		const ID_game = await Game.find(ID_game => ID_game.id === req.params.id);
-		return res.send(ID_game);
-	} catch (err) {
-		res.status(400);
-		return res.send("Database query failed");
-	}
+
+	const ID_game = await Game.find(ID_game => ID_game.id === req.params.id);
+	return res.send(ID_game);
+
 };
 
 const getGamesByTags = (req, res) => {
