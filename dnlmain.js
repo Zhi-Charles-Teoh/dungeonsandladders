@@ -1,8 +1,10 @@
 const express = require('express') 
 const app = express();
+require('./models');
 const bodyParser = require("body-parser");
 const gamesRouter = require('./routes/gamesRouter');
 const usersRouter = require('./routes/usersRouter');
+
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());

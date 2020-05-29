@@ -1,48 +1,16 @@
-var games = require('../models/games');
+const mongoose = require("mongoose");
 
-var users = [
-	{
-		"id":"00001",
-		"email":"zc970520@hotmail.com",
-		"password":"123456",
-		"profile_name":"Void Diversion",
-		"real_name":"Zhi Charles Teoh",
-		"birth_year":1997,
-		"birth_month":"May",
-		"birth_day":20,
-		"join_year":2020,
-		"join_month":"April",
-		"join_day":20,
-		"lives_in":"Melbourne, Australia",
-		"games_owned": [
-			games[0].name, games[3].name, games[10].name,
-		],
-		"games_wishlist": [
-			games[1].name, games[5].name, games[14].name, games[9].name,
-		]
-	},
-	{
-		"id":"00002",
-		"email":"teohz2@gmail.com",
-		"password":"123456",
-		"profile_name":"Pwnage",
-		"real_name":"Summer Han",
-		"birth_year":1997,
-		"birth_month":"May",
-		"birth_day":20,
-		"join_year":2020,
-		"join_month":"April",
-		"join_day":20,
-		"lives_in":"Melbourne, Australia",
-		"games_owned": [
-			games[0].name, games[3].name, games[10].name,
-		],
-		"games_wishlist": [
-			games[1].name, games[5].name, games[14].name, games[9].name,
-		]
-	},
-];
+const userSchema = new mongoose.Schema({
+	email:{ type: String, required: true },
+	password:{ type: String, required: true },
+	profile_name:{ type: String, required: true },
+	real_name: String,
+	birth_date: Date,
+	join_date:{ type: Date, required: true },
+	lives_in:{ type: String, required: true },
+	games_owned: Array,
+	games_wishlist: Array,
+});
 
-module.exports = {
-	users,
-};
+const User = mongoose.model("user", userSchema, "user");
+module.exports = User;
