@@ -24,7 +24,7 @@ const addUser = async (req, res) => {
 
 const getUserByID = async (req, res) => {
 	try {
-		const ID_user = await User.find(ID_user => ID_user._id === req.params._id);
+		const ID_user = await User.findByID(req.params.id);
 		return res.send(ID_user);
 	} catch (err) {
 		res.status(400);
