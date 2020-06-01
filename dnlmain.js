@@ -1,6 +1,7 @@
 const express = require('express') 
 const app = express();
 require('./models');
+
 const bodyParser = require("body-parser");
 const gamesRouter = require('./routes/gamesRouter');
 const usersRouter = require('./routes/usersRouter');
