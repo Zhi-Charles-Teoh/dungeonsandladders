@@ -12,5 +12,5 @@ const userSchema = new mongoose.Schema({
 	games_wishlist: Array,
 });
 
-const User = mongoose.model("user", userSchema, "user");
+const User = mongoose.model("Users", userSchema, "Users");
 module.exports = User;

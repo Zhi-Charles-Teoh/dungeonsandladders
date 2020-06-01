@@ -9,5 +9,5 @@ const gameSchema = new mongoose.Schema({
 	dislike_count:{ type: String, required: true },
 });
 
-const Game = mongoose.model("game", gameSchema, "game");
+const Game = mongoose.model("Games", gameSchema, "Games");
 module.exports = Game;

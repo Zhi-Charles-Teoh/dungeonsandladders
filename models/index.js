@@ -8,7 +8,7 @@ mongoose.connect(MONGO_URL || "mongodb://localhost/info30005", {
 	useCreateIndex: true,
 	useUnifiedTopology: true,
 	useFindAndModify: false,
-	dbName: "INFO30005-DnL"
+	dbName: "INFO30005-DnL",
 });
 
 const db = mongoose.connection;
@@ -20,7 +20,7 @@ db.once("open", async () => {
 	console.log("Mongo connection started on " + db.host + ":" + db.port);
 });
 
-require("./Games");
-require("./Gametags");
-require("./Users");
-require("./Matchmakings");
+require("./games");
+require("./gametags");
+require("./users");
+require("./matchmakings");

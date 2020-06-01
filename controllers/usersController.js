@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const User = mongoose.model("user");
+const User = mongoose.model("Users");
 
 
 const getAllUsers = async (req, res) => {
@@ -24,7 +24,7 @@ const addUser = async (req, res) => {
 
 const getUserByID = async (req, res) => {
 	try {
-		const ID_user = await User.find(ID_user => ID_user.id === req.params.id);
+		const ID_user = await User.find(ID_user => ID_user._id === req.params._id);
 		return res.send(ID_user);
 	} catch (err) {
 		res.status(400);

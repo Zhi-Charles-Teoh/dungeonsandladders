@@ -4,5 +4,5 @@ const gametagSchema = new mongoose.Schema({
 	name:{ type: String, required: true },
 });
 
-const Gametag = mongoose.model("gametag", gametagSchema, "gametag");
+const Gametag = mongoose.model("Gametags", gametagSchema, "Gametags");
 module.exports = Gametag;
