@@ -1,10 +1,10 @@
 const mongoose = require("mongoose");
-const Matchmaking = mongoose.model("Matchmakings");
+const Session = mongoose.model("Matchmakings");
 
 
 const getAllSessions = async (req, res) => {
 	try {
-		const all_sessions = await Matchmaking.find();
+		const all_sessions = await Session.find();
 		return res.send(all_sessions);
 	} catch (err) {
 		res.status(400);
@@ -29,8 +29,15 @@ const getSessionByID = async (req, res) => {
 	res.send("Working on this feature");
 };
 
-const createSession = async (req, res) => {
-	res.send("Working on this feature");
+const createSession = async (req, res, next) => {
+	try {
+		var new_session = new Session(request.body);
+		var result = await new_session.save();
+		res.send(result);
+	} catch (err) {
+		res.status(400);
+		return res.send("Failed to create a new session.");
+	}
 };
 
 const joinSession = async (req, res) => {

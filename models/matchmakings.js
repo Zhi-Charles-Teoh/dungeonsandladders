@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const sessionSchema = new mongoose.Schema({
 	start_time:{ type: Date, required: true },
-	location:{ type: String, required: true },
+	session_location:{ type: String, required: true },
 	game:{ type: String, required: true },
 	host:{ type: String, required: true },
 	max_playercount: Number,
@@ -11,5 +11,5 @@ const sessionSchema = new mongoose.Schema({
 	notes: String,
 });
 
-const Session = mongoose.model("session", sessionSchema, "session");
+const Session = mongoose.model("Matchmakings", sessionSchema, "Matchmakings");
 module.exports = Session;
