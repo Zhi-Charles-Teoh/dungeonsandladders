@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const ObjectID = mongoose.Schema.Types.ObjectId;
 
 const userSchema = new mongoose.Schema({
 	email:{ type: String, required: true },
@@ -8,8 +9,8 @@ const userSchema = new mongoose.Schema({
 	birth_date: Date,
 	join_date:{ type: Date, required: true },
 	lives_in:{ type: String, required: true },
-	games_owned: Array,
-	games_wishlist: Array,
+	games_owned: [ObjectID],
+	games_wishlist: [ObjectID],
 });
 
 const User = mongoose.model("Users", userSchema, "Users");
