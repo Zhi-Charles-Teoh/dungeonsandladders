@@ -61,12 +61,15 @@ const editSession = async (req, res) => {
 
 const joinSession = async (req, res) => {
 	try{
+		const ID_session = await Session.findOne({_id: req.params.id}).exec();
+		ID_session.players.set(req.body);
+		var result = await ID_session.save();
 		res.send("Working on this feature");
 	} catch (err) {
 		res.status(400);
 		return res.send("Session joining failed");
 	}
-};
+}; //done
 
 const cancelSession = async (req, res) => {
 	try {

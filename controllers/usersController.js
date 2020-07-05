@@ -28,7 +28,7 @@ const editProfile = async (req, res) => {
 
 const addUser = async (req, res) => {
 	try{
-		var new_user = new User(request.body);
+		var new_user = new User(req.body);
 		var result = await new_user.save();
 		res.send(result);
 	} catch (err) {

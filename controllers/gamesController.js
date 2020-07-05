@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const Game = mongoose.model("Games");
+const Gametags = mongoose.model("Gametags");
 
 
 const getAllGames = async (req, res) => {

@@ -6,7 +6,7 @@ const userSchema = new mongoose.Schema({
 	password:{ type: String, required: true },
 	profile_name:{ type: String, required: true },
 	real_name: String,
-	birth_date: Date,
+	birth_date:{ type: Date, required: true },
 	join_date:{ type: Date, required: true },
 	lives_in:{ type: String, required: true },
 	games_owned: [ObjectID],
