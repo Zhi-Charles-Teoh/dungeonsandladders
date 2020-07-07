@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import { useGames } from "../apis/game_api";
 import Collapsible from 'react-collapsible';
 
-import Button from "../components/Button";
-
 export default function Games() {
   const { loading, games, error } = useGames();
   if (loading) {
@@ -27,7 +25,6 @@ export default function Games() {
 
 function Game(game) {
 	const { id, name, min_playercount, max_playercount, like_count, dislike_count } = game;
-	const [showInfo, setShowInfo] = useState(false);
 
 	return (
 		<div className={`game game-${id}`} key={id}>
