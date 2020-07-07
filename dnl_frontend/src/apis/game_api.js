@@ -5,7 +5,8 @@ const BASE_URL = "https://dungeons-and-ladders.herokuapp.com";
 
 function getAllGames() {
 	const endpoint = BASE_URL + `/games`;
-	
+	if (endpoint) console.log("Alright!");
+	else console.log("Hmmmmm.....");
 	return fetch(endpoint).then(res => {
 		console.log(res);
 		return res.json();
@@ -19,16 +20,17 @@ export function useGames() {
 	const [error, setError] = useState(null);
 
 	useEffect(() => {
-	getAllGames()
-		.then(games => {
-			setGames(games);
-			setLoading(false);
-		})
-		.catch(e => {
-			console.log(e);
-			setError(e);
-			setLoading(false);
-		});
+		getAllGames()
+			.then(games => {
+				console.log(games);
+				setGames(games);
+				setLoading(false);
+			})
+			.catch(e => {
+				console.log(e);
+				setError(e);
+				setLoading(false);
+			});
 	}, []);
 
 	return {
