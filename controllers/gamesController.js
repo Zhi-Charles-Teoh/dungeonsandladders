@@ -50,8 +50,7 @@ const getGameByID = async (req, res) => {
 
 const getGamesByTags = async (req, res) => {
 	try{
-		res.send("Working on this feature");
-		query_array = [];
+		const query_array = [];
 		const tags_games = await Game.find({
 			tags: { $all: query_array }
 		}).exec();
