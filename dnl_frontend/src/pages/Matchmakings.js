@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useSessions, createSession, editSession, joinSession, cancelSession } from "../apis/matchmaking_api";
+import { useSessions, editSession, joinSession, cancelSession } from "../apis/matchmaking_api";
 import Collapsible from 'react-collapsible';
 
 import Button from "../components/Button";
