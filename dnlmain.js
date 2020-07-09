@@ -1,13 +1,15 @@
 const express = require('express') 
 const app = express();
 require('./models');
+const cors = require('cors');
+
 
 const bodyParser = require("body-parser");
 const gamesRouter = require('./routes/gamesRouter');
 const usersRouter = require('./routes/usersRouter');
 const mmRouter = require('./routes/matchmakingRouter');
 
-
+app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
