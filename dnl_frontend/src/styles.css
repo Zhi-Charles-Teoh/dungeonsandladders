@@ -21,11 +21,11 @@ input {
 }
 
 nav {
-  background-color: #268bc6;
+  background-color: #F6D909;
 }
 
 nav a {
-  color: #fff;
+  color: #000000;
   text-decoration: none;
   padding: 10px;
   display: inline-block;
@@ -40,11 +40,6 @@ nav a.active {
   border-bottom: 2px solid #fff;
 }
 
-.createSession {
-  background-color: #2da2db;
-  padding: 40px;
-}
-
 div.user {
   margin: 0;
   padding: 0;
@@ -56,14 +51,19 @@ div.user .info {
   padding: 10px;
 }
 
-.user-expand {
+.create-expand,
+.session-expand,
+.join-expand {
   display: none;
   background-color: #2da2db;
   padding: 10px;
 }
 
-.user-expand.show {
+.create-expand.show,
+.session-expand.show,
+.join-expand.show {
   display: block;
+  background-color: #13ED89;
 }
 
 .btn {
@@ -237,4 +237,19 @@ fieldset[disabled] .btn {
   color: #ffccbc;
   background: #f4511e;
   box-shadow: none;
+}
+.Collapsible {
+	border-color: #E8BA1E;
+	width: 400px;
+	background: #CCF32B;
+	padding: 8px;
+    margin: auto;
+}
+.Collapsible_contentOuter {
+	font: 15px bold;
+}
+.Collapsible__contentInner {
+	background: #3C8953;
+	color: #EAF4BE;
+	text-align: left;
 }

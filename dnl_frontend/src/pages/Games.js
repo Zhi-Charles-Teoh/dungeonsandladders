@@ -16,6 +16,7 @@ export default function Games() {
   return (
 	<div>
 		<h1>All Games</h1>
+		<h3>Click on each of them to see the details!</h3>
 		{games.map(game => (
 			<Game key={game.id} {...game} />
 		))}
@@ -32,7 +33,7 @@ function Game(game) {
 			<Collapsible trigger={name}>
 				<p>Recommended number of players: {min_playercount} - {max_playercount}</p>
 				<p>{like_count} likes, {dislike_count} dislikes</p>
-			</Collapsible>
+			</Collapsible><br />
 		  </div>
 		</div>
 	);

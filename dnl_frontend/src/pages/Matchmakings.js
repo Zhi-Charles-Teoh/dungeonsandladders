@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useSessions, editSession, joinSession, cancelSession } from "../apis/matchmaking_api";
+import { useSessions, createSession, editSession, joinSession, cancelSession } from "../apis/matchmaking_api";
 import Collapsible from 'react-collapsible';
 
 import Button from "../components/Button";
@@ -17,18 +17,43 @@ export default function Sessions() {
   console.log(sessions);
 
   // Display a list of the sessions
-  return null;
+  return (
+	<div>
+		<br />
+		<CreateSesh />
+		<h1>All Active Sessions</h1>
+		<h3>Click on each of them to see the details!</h3>
+		{sessions.map(session => (
+			<Session key={session.id} {...session} />
+		))}
+	</div>
+  );
+}
+
+function CreateSesh() {
+	const [showCreate, setShowCreate] = useState(false);
+	
+	return (
+		<div className="Create Session form">
+			<Button className={"btn"} onClick={() => setShowCreate(!showCreate)}>
+				{showCreate ? "Cancel" : "Create a Session"}
+			</Button><br />
+			<CreateExtended showCreate={showCreate} /><br />
+		</div>
+	)
 }
 
 function Session(session) {
   const { id, host, game, start_time, session_location, max_playercount, rsvp_by, notes, players } = session;
   const [showJoin, setShowJoin] = useState(false);
   const [showEdit, setShowEdit] = useState(false);
-
+  
+  const collapsible = [ game, " | ", start_time, " | ", session_location ];
+    
   return (
     <div className={`session session-${id}`} key={id}>
-      <div className="info">
-        <Collapsible trigger="{game} | {start_time} | {session_location}">
+      <div className="session info">
+        <Collapsible trigger={collapsible}>
 			<p>Host: {host}</p>
 			<p>Game: {game}</p>
 			<p>Scheduled time: {start_time}</p>
@@ -36,17 +61,17 @@ function Session(session) {
 			<p>Max players: {max_playercount}</p>
 			<p>RSVP by: {rsvp_by}</p>
 			<p>Notes: {notes}</p>
-			<p><ShowPlayers players={players} /></p>
+			<p>Current players: {players}</p>
 			<Button className={"btn"} onClick={() => setShowJoin(!showJoin)}>
 			  {showJoin ? "Cancel" : "Join Session"}
 			</Button>
 			<Button className={"btn"} onClick={() => setShowEdit(!showEdit)}>
-			  {showEdit ? "Collapse" : "Edit Session"}
+			  {showEdit ? "Cancel" : "Edit Session"}
 			</Button>
-		</Collapsible>
+			<JoinExtended showJoin={showJoin} />
+			<SessionExtended {...session} showEdit={showEdit} />
+		</Collapsible><br />
       </div>
-	  <JoinExtended showJoin={showJoin} />
-      <SessionExtended {...session} showEdit={showEdit} />
     </div>
   );
 }
@@ -94,6 +119,99 @@ function JoinExtended(props) {
 	);
 }
 
+
+function CreateExtended(props) {
+	const { showCreate } = props;
+	
+	const [host, setHost] = useState("");
+	const [game, setGame] = useState("");
+	const [start_time, setTime] = useState("");
+	const [session_location, setLocation] = useState("");
+	const [max_playercount, setMaxPlayers] = useState("");
+	const [rsvp_by, setRSVP] = useState("");
+	const [notes, setNotes] = useState("");
+
+	function onSubmit() {
+		createSession({
+		   host,
+		   game,
+		   start_time,
+		   session_location,
+		   max_playercount,
+		   rsvp_by,
+		   notes,
+		   players: []
+		 });
+	}
+
+  return (
+    <div className={`create-expand ${showCreate ? "show" : ""}`}>
+      <h1>Create a Boardgame Session</h1>
+      <form>
+        Host username: <input
+          type="text"
+          name="host"
+          value={host}
+          onChange={event => {
+             setHost(event.target.value);
+          }}
+        /><br />
+        Game:<input
+          type="text"
+          name="game"
+          value={game}
+          onChange={event => {
+             setGame(event.target.value);
+          }}
+        />
+		Max players: <input
+          type="number"
+          name="max_playercount"
+          value={max_playercount}
+          onChange={event => {
+             setMaxPlayers(event.target.value);
+          }}
+        /><br />
+        Scheduled date and time: <input
+          type="datetime-local"
+          name="start_time"
+          value={start_time}
+          onChange={event => {
+             setTime(event.target.value);
+          }}
+        /><br />
+		Venue: <input
+          type="text"
+          name="session_location"
+          value={session_location}
+          onChange={event => {
+             setLocation(event.target.value);
+          }}
+        /><br />
+		RSVP-by: <input
+          type="datetime-local"
+          name="rsvp_by"
+          value={rsvp_by}
+          onChange={event => {
+             setRSVP(event.target.value);
+          }}
+        /><br />
+		Additional notes:<br /> <textarea
+          name="notes"
+		  rows="5" 
+		  cols="33"
+          value={notes}
+          onChange={event => {
+             setNotes(event.target.value);
+          }}
+		></textarea><br />
+        <Button className={"btn-success"} onClick={onSubmit}>
+          Create
+        </Button>
+      </form>
+    </div>
+  );
+}
 
 function SessionExtended(props) {
 	const { id, host, game, start_time, session_location, max_playercount, rsvp_by, notes, showEdit } = props;

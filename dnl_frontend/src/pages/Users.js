@@ -20,6 +20,7 @@ export default function Users() {
   return (
 	<div>
 		<h1>All Users</h1>
+		<h3>Click on each of them to see the details!</h3>
 		{users.map(user => (
 			<User key={user.id} {...user} />
 		))}
